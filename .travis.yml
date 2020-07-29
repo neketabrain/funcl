@@ -7,4 +7,5 @@ cache:
 script:
   - npm run lint
   - npm run lint:types
+  - npm run test:coverage
   - npm run build
