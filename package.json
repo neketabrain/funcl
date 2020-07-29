@@ -1,14 +1,14 @@
 {
-  "name": "fn-js",
+  "name": "fp-func",
   "version": "0.1.0",
   "description": "Functional library for JavaScript and TypeScript",
   "publishConfig": {
     "access": "public"
   },
   "author": "Nikita Karapuzov <karapuzov.nikita@gmail.com>",
-  "repository": "github:neketabrain/fn-js",
-  "homepage": "https://github.com/neketabrain/fn-js",
-  "bugs": "https://github.com/neketabrain/fn-js/issues",
+  "repository": "github:neketabrain/fp-func",
+  "homepage": "https://github.com/neketabrain/fp-func",
+  "bugs": "https://github.com/neketabrain/fp-func/issues",
   "keywords": [
     "js",
     "ts",
