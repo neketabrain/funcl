@@ -1,5 +1,4 @@
-// import { Fn } from "./types";
-export type Fn<T> = (fn: T) => T;
+import { Fn } from "./types";
 
 /**
  * @description Performs left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
