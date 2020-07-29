@@ -1,3 +1,2 @@
-const test = "Test";
-
-export default test;
+export { default as compose } from "./compose";
+export { default as pipe } from "./pipe";
