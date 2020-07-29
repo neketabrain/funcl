@@ -1,14 +1,14 @@
 {
-  "name": "fp-func",
+  "name": "funcl.js",
   "version": "0.1.1",
   "description": "Functional library for JavaScript and TypeScript",
   "publishConfig": {
     "access": "public"
   },
   "author": "Nikita Karapuzov <karapuzov.nikita@gmail.com>",
-  "repository": "github:neketabrain/fp-func",
-  "homepage": "https://github.com/neketabrain/fp-func",
-  "bugs": "https://github.com/neketabrain/fp-func/issues",
+  "repository": "github:neketabrain/funcl",
+  "homepage": "https://github.com/neketabrain/funcl",
+  "bugs": "https://github.com/neketabrain/funcl/issues",
   "keywords": [
     "js",
     "ts",

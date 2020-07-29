@@ -1,3 +1,3 @@
-# fp-func
+# funcl
 
 Functional library for JavaScript and TypeScript.
