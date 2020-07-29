@@ -33,7 +33,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib esm",
-    "lint": "eslint src/**/*.ts --cache",
+    "lint": "eslint {src,tests}/**/*.ts --cache",
     "lint:fix": "yarn lint --fix",
     "lint:types": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.build.json",
