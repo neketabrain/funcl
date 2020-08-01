@@ -1,7 +1,7 @@
 /**
  * @description Performs left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
- * @param {Function} fn - The first function. May have any arity
- * @param {...Function} fns - The remaining functions to compose. Must be unary
+ * @param {Function} fn - The first function. May have any arity.
+ * @param {...Function} fns - The remaining functions to compose. Must be unary.
  * @return {Function}
  * @example
  * const concat = (str: string, num: number): string => `${str} + ${num} + world`;
@@ -9,9 +9,9 @@
  * const pipeline = pipe(concat, upper);
  *
  * pipeline("hello", 123); // => HELLO + 123 + WORLD
- * @see compose
+ * @see https://github.com/neketabrain/funcl#compose
  */
-export const pipe = <T extends any[], R>(
+export const pipe = <T extends any[], R>( // eslint-disable-line @typescript-eslint/no-explicit-any
   fn: (...args: T) => R,
   ...fns: Array<(a: R) => R>
 ): Function => {

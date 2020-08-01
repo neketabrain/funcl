@@ -1,4 +1,4 @@
-# funcl
+# funcl.js
 
 [![npm Version](https://img.shields.io/npm/v/funcl.js.svg)](https://www.npmjs.com/package/funcl.js)
 [![License](https://img.shields.io/npm/l/funcl.js.svg)](https://github.com/neketabrain/funcl/blob/master/LICENSE)
@@ -30,7 +30,7 @@ yarn add funcl.js
 ((y -> z), (x -> y),  ..., (a -> b)) -> a -> z
 ```
 
-Performs right-to-left function composition. The first argument may have any arity; the remaining arguments must be unary.
+Performs right-to-left function composition. The all arguments must be unary.
 
 #### Example
 
@@ -38,11 +38,11 @@ Performs right-to-left function composition. The first argument may have any ari
 import { compose } from "funcl.js";
 import { compose } from "funcl.js/esm"; // ES6 module
 
-const add = (str: string) => str + " world";
 const upper = (str: string) => str.toUpperCase();
+const add = (str: string) => str + " world!";
+const composed = compose(add, upper);
 
-const fn = compose(add, upper);
-const result = fn("hello"); // => HELLO world
+const result = composed("hello"); // HELLO world!
 ```
 
 <br />
@@ -61,9 +61,9 @@ Performs left-to-right function composition. The first argument may have any ari
 import { pipe } from "funcl.js";
 import { pipe } from "funcl.js/esm"; // ES6 module
 
-const add = (str: string) => str + " world";
+const concat = (str: string, num: number): string => `${str} + ${num} + world`;
 const upper = (str: string) => str.toUpperCase();
+const pipeline = pipe(concat, upper);
 
-const fn = pipe(add, upper);
-const result = fn("hello"); // => HELLO WORLD
+const result = pipeline("hello", 123); // => HELLO + 123 + WORLD
 ```
