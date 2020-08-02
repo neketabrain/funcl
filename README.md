@@ -27,7 +27,7 @@ yarn add funcl.js
 ## compose
 
 ```
-((y -> z), (x -> y),  ..., (a -> b)) -> a -> z
+((y -> z), (x -> y), ..., (a -> b)) -> a -> z
 ```
 
 Performs right-to-left function composition. The all arguments must be unary.
@@ -51,10 +51,10 @@ composed(4); // => Result: 42
 ## pipe
 
 ```
-((y -> z), (x -> y),  ..., (a -> b)) -> a -> z
+((a -> b), (c -> d), ..., (y -> z)) -> a -> z
 ```
 
-Performs left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
+Performs left-to-right function composition. The all arguments must be unary.
 
 #### Example
 
@@ -62,9 +62,10 @@ Performs left-to-right function composition. The first argument may have any ari
 import { pipe } from "funcl.js";
 import { pipe } from "funcl.js/esm"; // ES6 module
 
-const concat = (str: string, num: number): string => `${str} + ${num} + world`;
-const upper = (str: string) => str.toUpperCase();
-const pipeline = pipe(concat, upper);
+const add = (num1: number) => (num2: number) => num1 + num2;
+const multiple = (num1: number) => (num2: number) => num1 * num2;
+const getResult = (num: number) => `Result: ${num}`;
 
-const result = pipeline("hello", 123); // => HELLO + 123 + WORLD
+const pipeline = pipe(multiple(3), add(10), getResult);
+pipeline(4); // => Result: 22
 ```
