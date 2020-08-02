@@ -38,11 +38,12 @@ Performs right-to-left function composition. The all arguments must be unary.
 import { compose } from "funcl.js";
 import { compose } from "funcl.js/esm"; // ES6 module
 
-const upper = (str: string) => str.toUpperCase();
-const add = (str: string) => str + " world!";
-const composed = compose(add, upper);
+const add = (num1: number) => (num2: number) => num1 + num2;
+const multiple = (num1: number) => (num2: number) => num1 * num2;
+const getResult = (num: number) => `Result: ${num}`;
 
-const result = composed("hello"); // HELLO world!
+const composed = compose(getResult, multiple(3), add(10));
+composed(4); // => Result: 42
 ```
 
 <br />
