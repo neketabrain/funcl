@@ -43,6 +43,7 @@
       ],
       "rules": {
         "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-implied-eval": "off",
         "@typescript-eslint/no-unsafe-return": "off"
       }

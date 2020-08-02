@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-type Func<A, B> = (a: A) => B;
+import { Func } from "./types";
 
 /**
  * @description Performs right-to-left function composition. The all arguments must be unary.
@@ -16,7 +14,7 @@ type Func<A, B> = (a: A) => B;
  * composed(4); // => Result: 42
  * @see {@link https://github.com/neketabrain/funcl#pipe|pipe}
  */
-export const compose = <
+export function compose<
   F1 extends Func<any, any>,
   FN extends Array<Func<any, any>>,
   R extends FN extends []
@@ -32,11 +30,10 @@ export const compose = <
     : FN extends [any, any, any, any, Func<infer A, any>]
     ? (a: A) => ReturnType<F1>
     : Func<any, ReturnType<F1>>
->(
-  fn: F1,
-  ...fns: FN
-): R =>
-  ((raw: any) =>
-    [fn, ...fns].reduceRight((memo, func) => func(memo), raw)) as R;
+>(fn: F1, ...fns: FN): R {
+  return function _compose(raw: any) {
+    return [fn, ...fns].reduceRight((memo, func) => func(memo), raw);
+  } as R;
+}
 
 export default compose;
